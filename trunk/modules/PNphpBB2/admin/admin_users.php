@@ -66,7 +66,12 @@ else
 //
 // Begin program
 //
-if ( $mode == 'edit' || $mode == 'save' && ( isset($HTTP_POST_VARS['username']) || isset($HTTP_GET_VARS[POST_USERS_URL]) || isset( $HTTP_POST_VARS[POST_USERS_URL]) ) )
+// Begin PNphpBB2 Module
+// When editing user profile 'username' won't be present in the POST because
+// PNphpBB2 doesn't allow changing the username from inside the admin CP.
+// We must check for 'id' otherwise the changes won't be commited to the DB.
+if ( $mode == 'edit' || $mode == 'save' && ( isset($HTTP_POST_VARS['username']) || isset($HTTP_POST_VARS['id']) || isset($HTTP_GET_VARS[POST_USERS_URL]) || isset( $HTTP_POST_VARS[POST_USERS_URL]) ) )
+// End PNphpBB2 Module
 {
 //-- mod : File Attachment Mod v2 Version 2.4.3 ----------------------------------------------------
 	if (!intval($attach_config['disable_mod']))
@@ -650,7 +655,6 @@ if ( $mode == 'edit' || $mode == 'save' && ( isset($HTTP_POST_VARS['username']) 
 											}
 										}
 // Begin PNphpBB2 Module
-//										@copy($tmp_filename, "./../" . $board_config['avatar_path'] . "/$avatar_filename");
 										@copy($tmp_filename, "../" . $board_config['avatar_path'] . "/$avatar_filename");
 // End PNphpBB2 Module
 										@unlink($tmp_filename);
@@ -1124,6 +1128,11 @@ if ( $mode == 'edit' || $mode == 'save' && ( isset($HTTP_POST_VARS['username']) 
 					}
 // End PNphpBB2 Module (PostNuke avatar patch)
 					break;
+// Begin PNphpBB2 Module
+				case USER_AVATAR_GRAVATAR:
+					$avatar = ( $board_config['allow_gravatars'] ) ? '<img src="' . 'http://www.gravatar.com/avatar.php?gravatar_id=' . md5($this_userdata['user_email']) . '" alt="" />' : '';
+					break;
+// End PNphpBB2 Module
 			}
 		}
 		else

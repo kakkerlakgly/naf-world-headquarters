@@ -70,6 +70,11 @@ function generate_user_info(&$row, $date_format, $group_mod, &$from, &$posts, &$
 				}
 // End PNphpBB2 Module (PostNuke avatar patch)
 				break;
+// Begin PNphpBB2 Module
+			case USER_AVATAR_GRAVATAR:
+				$poster_avatar = ( $board_config['allow_gravatars'] ) ? '<img src="' . 'http://www.gravatar.com/avatar.php?gravatar_id=' . md5($row['user_email']) . '" alt="" />' : '';
+				break;
+// End PNphpBB2 Module        
 		}
 	}
 
@@ -522,6 +527,7 @@ else if ( $group_id )
 			{
 // Begin PNphpBB2 Module
 //				$username = ( isset($HTTP_POST_VARS['username']) ) ? phpbb_clean_username($HTTP_POST_VARS['username']) : '';
+				$username = get_var('username', '');
 // End PNphpBB2 Module
 
 // Begin PNphpBB2 Module
