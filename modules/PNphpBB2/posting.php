@@ -665,7 +665,9 @@ else if ( $submit || $confirm )
 // Begin PNphpBB2 Module
 		if ($board_config['pnphpbb2_post_confirm'] == 1)
 		{
-			redirect(append_sid("viewtopic.$phpEx?" . POST_POST_URL . "=" . $post_id, true) . '#' . $post_id);
+			/* Fixup &amp; in redirect header */
+			$return_meta = str_replace("&amp;", '&', $return_meta);
+			redirect($return_meta);
 		}
 // End PNphpBB2 Module
 		

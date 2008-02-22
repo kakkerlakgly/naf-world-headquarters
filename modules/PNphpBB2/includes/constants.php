@@ -50,6 +50,7 @@ define('USER_AVATAR_REMOTE', 2);
 define('USER_AVATAR_GALLERY', 3);
 // Begin PNphpBB2 Module
 define('USER_AVATAR_POSTNUKE', 4);
+define('USER_AVATAR_GRAVATAR', 5);
 // End PNphpBB2 Module
 
 
