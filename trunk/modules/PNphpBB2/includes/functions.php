@@ -6,7 +6,7 @@
  *   copyright            : (C) 2001 The phpBB Group
  *   email                : support@phpbb.com
  *
- *   $Id: functions.php,v 1.2 2006/04/28 17:49:44 adrianc602 Exp $
+ *   $Id: functions.php 192 2007-01-20 15:17:44Z kronos $
  *
  *
  ***************************************************************************/
@@ -1437,7 +1437,7 @@ function redirect($url)
 		$db->sql_close();
 	}
 
-	if (strstr(urldecode($url), "\n") || strstr(urldecode($url), "\r"))
+	if (strstr(urldecode($url), "\n") || strstr(urldecode($url), "\r") || strstr(urldecode($url), ';url'))
 	{
 		message_die(GENERAL_ERROR, 'Tried to redirect to potentially insecure url.');
 	}
@@ -1630,6 +1630,27 @@ function forum_mod_status ($forum_id)
 	}
 	return $moderators;
 }
+
+function get_pndb_config() {
+	if (defined('PN_VERSION_NUM') && !strcmp(PN_VERSION_NUM, "0.8.", 4)) {
+		/* PN 0.8 */
+		return array(	$GLOBALS['PNConfig']['DBInfo']['default']['dbtype'],
+				$GLOBALS['PNConfig']['DBInfo']['default']['dbhost'],
+				$GLOBALS['PNConfig']['DBInfo']['default']['dbuname'],
+				$GLOBALS['PNConfig']['DBInfo']['default']['dbpass'],
+				$GLOBALS['PNConfig']['DBInfo']['default']['dbname']
+		);
+	} else {
+		/* Older versions */
+		return array(	pnConfigGetVar('dbtype'),
+				pnConfigGetVar('dbhost'),
+				pnConfigGetVar('dbuname'),
+				pnConfigGetVar('dbpass'),
+				pnConfigGetVar('dbname')
+		);
+	}
+}
+
 // End PNphpBB2 Module
 
 ?>

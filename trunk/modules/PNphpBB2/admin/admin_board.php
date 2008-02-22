@@ -6,7 +6,7 @@
  *   copyright            : (C) 2001 The phpBB Group
  *   email                : support@phpbb.com
  *
- *   $Id: admin_board.php,v 1.2 2006/04/28 17:49:42 adrianc602 Exp $
+ *   $Id: admin_board.php 192 2007-01-20 15:17:44Z kronos $
  *
  *
  ***************************************************************************/
@@ -67,6 +67,15 @@ else
 		if ($config_name == 'server_name')
 		{
 			$new['server_name'] = str_replace('http://', '', $new['server_name']);
+		}
+
+		// Attempt to prevent a mistake with this value.
+		{
+			$new['avatar_path'] = trim($new['avatar_path']);
+			if (strstr($new['avatar_path'], "\0") || !is_dir($phpbb_root_path . $new['avatar_path']) || !is_writable($phpbb_root_path . $new['avatar_path']))
+			{
+				$new['avatar_path'] = $default_config['avatar_path'];
+			}
 		}
 
 		if( isset($HTTP_POST_VARS['submit']) )

@@ -6,7 +6,7 @@
  *   copyright            : (C) 2001 The phpBB Group
  *   email                : support@phpbb.com
  *
- *   $Id: groupcp.php,v 1.2 2006/04/28 17:49:44 adrianc602 Exp $
+ *   $Id: groupcp.php 192 2007-01-20 15:17:44Z kronos $
  *
  *
  ***************************************************************************/
@@ -99,7 +99,7 @@ function generate_user_info(&$row, $date_format, $group_mod, &$from, &$posts, &$
 //	$temp_url = append_sid("privmsg.$phpEx?mode=post&amp;" . POST_USERS_URL . "=" . $row['user_id']);
 	if ($board_config['pnphpbb2_pn_pm'])
 	{
-	 	 $temp_url = ("modules.php?op=modload&name=Messages&file=replypmsg&send=1&uname=" . urlencode($row['username']) );
+	 	 $temp_url = "index.php?module=Messages&amp;func=compose&amp;uname=" . urlencode($row['username']);
 	}
 	else
 	{	
@@ -194,6 +194,7 @@ $confirm = ( isset($HTTP_POST_VARS['confirm']) ) ? TRUE : 0;
 $cancel = ( isset($HTTP_POST_VARS['cancel']) ) ? TRUE : 0;
 
 $start = ( isset($HTTP_GET_VARS['start']) ) ? intval($HTTP_GET_VARS['start']) : 0;
+$start = ($start < 0) ? 0 : $start;
 
 //
 // Default var values
@@ -471,21 +472,24 @@ else if ( $group_id )
 							FROM " . AUTH_ACCESS_TABLE . " aa 
 							WHERE aa.group_id = g.group_id  
 						)
-					)";
+					)
+				ORDER BY aa.auth_mod DESC";
 			break;
 
 		case 'oracle':
 			$sql = "SELECT g.group_moderator, g.group_type, aa.auth_mod 
 				FROM " . GROUPS_TABLE . " g, " . AUTH_ACCESS_TABLE . " aa 
 				WHERE g.group_id = $group_id
-					AND aa.group_id (+) = g.group_id";
+					AND aa.group_id (+) = g.group_id
+				ORDER BY aa.auth_mod DESC";
 			break;
 
 		default:
 			$sql = "SELECT g.group_moderator, g.group_type, aa.auth_mod 
 				FROM ( " . GROUPS_TABLE . " g 
 				LEFT JOIN " . AUTH_ACCESS_TABLE . " aa ON aa.group_id = g.group_id )
-				WHERE g.group_id = $group_id";
+				WHERE g.group_id = $group_id
+				ORDER BY aa.auth_mod DESC";
 			break;
 	}
 	if ( !($result = $db->sql_query($sql)) )

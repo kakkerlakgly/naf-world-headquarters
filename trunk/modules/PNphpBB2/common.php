@@ -6,7 +6,7 @@
  *   copyright            : (C) 2001 The phpBB Group
  *   email                : support@phpbb.com
  *
- *   $Id: common.php,v 1.2 2006/05/03 19:29:26 adrianc602 Exp $
+ *   $Id: common.php 192 2007-01-20 15:17:44Z kronos $
  *
  *
  ***************************************************************************/
@@ -48,6 +48,24 @@ if (@phpversion() >= '5.0.0' && (!@ini_get('register_long_arrays') || @ini_get('
 		$HTTP_SESSION_VARS = $_SESSION;
 	}
 }
+
+/* Begin PNphpBB2 Module */
+if (!isset($HTTP_POST_VARS) || !isset($HTTP_GET_VARS)) {
+	/* PN .763 emulates register_long_arrays = Off */
+	$HTTP_POST_VARS = $_POST;
+	$HTTP_GET_VARS = $_GET;
+	$HTTP_SERVER_VARS = $_SERVER;
+	$HTTP_COOKIE_VARS = $_COOKIE;
+	$HTTP_ENV_VARS = $_ENV;
+	$HTTP_POST_FILES = $_FILES;
+
+	// _SESSION is the only superglobal which is conditionally set
+	if (isset($_SESSION))
+	{
+		$HTTP_SESSION_VARS = $_SESSION;
+	}
+}
+/* End PNphpBB2 Module */
 
 // Protect against GLOBALS tricks
 if (isset($HTTP_POST_VARS['GLOBALS']) || isset($HTTP_POST_FILES['GLOBALS']) || isset($HTTP_GET_VARS['GLOBALS']) || isset($HTTP_COOKIE_VARS['GLOBALS']))
@@ -179,11 +197,10 @@ $gen_simple_header = FALSE;
 
 // Begin PNphpBB2 Module
 // include($phpbb_root_path . 'config.'.$phpEx);
-$dbms = pnConfigGetVar('dbtype');
-$dbhost = pnConfigGetVar('dbhost');
-$dbname = pnConfigGetVar('dbname');
-$dbuser = pnConfigGetVar('dbuname');
-$dbpasswd = pnConfigGetVar('dbpass');
+
+include($phpbb_root_path . 'includes/functions.'.$phpEx);
+
+list($dbms, $dbhost, $dbuser, $dbpasswd, $dbname) = get_pndb_config();
 $table_prefix = pnConfigGetVar('prefix') . "_phpbb_";
 
 list($dbconn) = pnDBGetConn(); 
@@ -213,7 +230,9 @@ include($phpbb_root_path . 'includes/constants.'.$phpEx);
 // End PNphpBB2 Module
 include($phpbb_root_path . 'includes/sessions.'.$phpEx);
 include($phpbb_root_path . 'includes/auth.'.$phpEx);
-include($phpbb_root_path . 'includes/functions.'.$phpEx);
+// Begin PNphpBB2 Module
+// include($phpbb_root_path . 'includes/functions.'.$phpEx);
+// End PNphpBB2 Module
 include($phpbb_root_path . 'includes/db.'.$phpEx);
 
 // We do not need this any longer, unset for safety purposes

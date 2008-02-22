@@ -6,7 +6,7 @@
  *   copyright            : (C) 2001 The phpBB Group
  *   email                : support@phpbb.com
  *
- *   $Id: modcp.php,v 1.2 2006/05/03 12:40:49 adrianc602 Exp $
+ *   $Id: modcp.php 192 2007-01-20 15:17:44Z kronos $
  *
  ***************************************************************************/
 
@@ -136,6 +136,7 @@ $confirm = ( $HTTP_POST_VARS['confirm'] ) ? TRUE : 0;
 // Continue var definitions
 //
 $start = ( isset($HTTP_GET_VARS['start']) ) ? intval($HTTP_GET_VARS['start']) : 0;
+$start = ($start < 0) ? 0 : $start;
 
 $delete = ( isset($HTTP_POST_VARS['delete']) ) ? TRUE : FALSE;
 $move = ( isset($HTTP_POST_VARS['move']) ) ? TRUE : FALSE;

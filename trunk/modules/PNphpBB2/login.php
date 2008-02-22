@@ -6,7 +6,7 @@
  *   copyright            : (C) 2001 The phpBB Group
  *   email                : support@phpbb.com
  *
- *   $Id: login.php,v 1.4 2004/09/25 19:21:22 carls Exp $
+ *   $Id: login.php 192 2007-01-20 15:17:44Z kronos $
  *
  *
  ***************************************************************************/
@@ -134,7 +134,7 @@ if( isset($HTTP_POST_VARS['login']) || isset($HTTP_GET_VARS['login']) || isset($
 				$redirect = ( !empty($HTTP_POST_VARS['redirect']) ) ? str_replace('&amp;', '&', htmlspecialchars($HTTP_POST_VARS['redirect'])) : '';
 				$redirect = str_replace('?', '&', $redirect);
 
-				if (strstr(urldecode($redirect), "\n") || strstr(urldecode($redirect), "\r"))
+				if (strstr(urldecode($redirect), "\n") || strstr(urldecode($redirect), "\r") || strstr(urldecode($redirect), ';url'))
 				{
 					message_die(GENERAL_ERROR, 'Tried to redirect to potentially insecure url.');
 				}
@@ -153,7 +153,7 @@ if( isset($HTTP_POST_VARS['login']) || isset($HTTP_GET_VARS['login']) || isset($
 			$redirect = ( !empty($HTTP_POST_VARS['redirect']) ) ? str_replace('&amp;', '&', htmlspecialchars($HTTP_POST_VARS['redirect'])) : "";
 			$redirect = str_replace("?", "&", $redirect);
 
-			if (strstr(urldecode($redirect), "\n") || strstr(urldecode($redirect), "\r"))
+			if (strstr(urldecode($redirect), "\n") || strstr(urldecode($redirect), "\r") || strstr(urldecode($redirect), ';url'))
 			{
 				message_die(GENERAL_ERROR, 'Tried to redirect to potentially insecure url.');
 			}
@@ -261,7 +261,8 @@ else
 // Begin PNphpBB2 Module
 //		$s_hidden_fields = '<input type="hidden" name="redirect" value="' . $forward_page . '" />';
 	 	$s_hidden_fields = '<input type="hidden" name="url" value="' . append_sid($forward_page) . '">';
-		$s_hidden_fields .= '<input type="hidden" name="module" value="NS-User">';
+		//$s_hidden_fields .= '<input type="hidden" name="module" value="NS-User">';
+		$s_hidden_fields .= '<input type="hidden" name="module" value="User">';
 		$s_hidden_fields .= '<input type="hidden" name="op" value="login">';
 // End PNphpBB2 Module
 		$s_hidden_fields .= (isset($HTTP_GET_VARS['admin'])) ? '<input type="hidden" name="admin" value="1" />' : '';
@@ -278,7 +279,8 @@ else
 			
 /* Begin PNphpBB2 Module */
 /*			'U_SEND_PASSWORD' => append_sid("profile.$phpEx?mode=sendpassword"), */
-			'U_SEND_PASSWORD' => "user.$phpEx?op=lostpassscreen&amp;module=NS-LostPassword",
+			//'U_SEND_PASSWORD' => "user.$phpEx?op=lostpassscreen&amp;module=NS-LostPassword",
+			'U_SEND_PASSWORD' => "user.$phpEx?op=lostpassscreen&amp;module=LostPassword",
 	 		'S_LOGIN_ACTION' => "user.$phpEx",
 /* End PNphpBB2 Module */
 

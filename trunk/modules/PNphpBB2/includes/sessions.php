@@ -6,7 +6,7 @@
  *   copyright            : (C) 2001 The phpBB Group
  *   email                : support@phpbb.com
  *
- *   $Id: sessions.php,v 1.7 2004/10/26 13:16:08 carls Exp $
+ *   $Id: sessions.php 192 2007-01-20 15:17:44Z kronos $
  *
  *
  ***************************************************************************/

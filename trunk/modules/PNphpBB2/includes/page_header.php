@@ -6,7 +6,7 @@
  *   copyright            : (C) 2001 The phpBB Group
  *   email                : support@phpbb.com
  *
- *   $Id: page_header.php,v 1.2 2006/05/03 18:49:47 adrianc602 Exp $
+ *   $Id: page_header.php 192 2007-01-20 15:17:44Z kronos $
  *
  *
  ***************************************************************************/
@@ -114,7 +114,7 @@ if ( $userdata['session_logged_in'] )
 // Begin PNphpBB2 Module
 //	$u_login_logout = 'login.'.$phpEx.'?logout=true&amp;sid=' . $userdata['session_id'];
 //	$l_login_logout = $lang['Logout'] . ' [ ' . $userdata['username'] . ' ]';
-	$u_login_logout = 'user.' . $phpEx . "?module=NS-User&op=logout";
+	$u_login_logout = 'user.' . $phpEx . "?module=User&op=logout";
 	$l_login_logout = $lang['Logout'] . ' [ ' . pnVarPrepForDisplay($userdata['username']) . ' ]';
 // End PNphpBB2 Module
 }
@@ -317,19 +317,22 @@ if ( ($userdata['session_logged_in']) && (empty($gen_simple_header)) )
 // Begin PNphpBB2 Module
 	if ($board_config['pnphpbb2_pn_pm'])
 	{
-		$column = &$pntable['priv_msgs_column'];
-		$sql = "SELECT count(*) FROM $pntable[priv_msgs] WHERE $column[read_msg] ='0' and $column[to_userid]=" . $userdata['user_id'];
-		if ( $result = $db->sql_query($sql) )
+		if (pnModAvailable('pnMessages'))
 		{
-		 	 list($unread) = $db->sql_fetchrow($result);
+			/* pnMessages module */
+			pnModLoad('pnMessages');
+			$info = pnModAPIFunc('pnMessages', 'user', 'getmessagecount');
+			$unread = $info['unread'];
+		} else {
+			/* Standard Messages module */
+			$column = &$pntable['priv_msgs_column'];
+			$sql = "SELECT count(*) FROM $pntable[priv_msgs] WHERE $column[read_msg] ='0' and $column[to_userid]=" . $userdata['user_id'];
+			if ( $result = $db->sql_query($sql) )
+			{
+			 	 list($unread) = $db->sql_fetchrow($result);
+			}
 		}
-		
-		$sql = "SELECT count(*) FROM $pntable[priv_msgs] WHERE $column[to_userid]=" . pnUserGetVar('uid');
-		if ( $result = $db->sql_query($sql) )
-		{
-		 	 list($total) = $db->sql_fetchrow($result);
-		}
-
+			
 		$s_privmsg_new = 0;
 		$icon_pm = $images['pm_new_msg'];
 
@@ -578,7 +581,7 @@ $template->assign_vars(array(
 	'U_PROFILE' => append_sid('profile.'.$phpEx.'?mode=editprofile'),
 /* Begin PNphpBB2 Module */
 /*	'U_PRIVATEMSGS' => append_sid('privmsg.'.$phpEx.'?folder=inbox'), */
-	'U_PRIVATEMSGS' => (($board_config['pnphpbb2_pn_pm']) ? 'modules.'.$phpEx.'?op=modload&name=Messages&file=index' : append_sid('privmsg.'.$phpEx.'?folder=inbox')),
+	'U_PRIVATEMSGS' => (($board_config['pnphpbb2_pn_pm']) ? 'index.php?module=Messages&amp;func=main' : append_sid('privmsg.'.$phpEx.'?folder=inbox')),
 /*	'U_PRIVATEMSGS_POPUP' => append_sid('privmsg.'.$phpEx.'?mode=newpm'),*/
 	'U_PRIVATEMSGS_POPUP' => append_sid('privmsg.'.$phpEx.'?mode=newpm', true),
 /* End PNphpBB2 Module */

@@ -7,6 +7,7 @@
  *   email                : wysspeter@bluewin.ch
  *   version              : 1.2
  *
+ *   $Id: admin_rebuild_search.php 192 2007-01-20 15:17:44Z kronos $
  *
  ***************************************************************************/
 
