@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<!--[lang]-->">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=<!--[charset]-->" />
+	<meta name="DESCRIPTION" content="<!--[slogan]-->" />
+	<meta name="ROBOTS" content="INDEX,FOLLOW" />
+	<meta name="resource-type" content="document" />
+	<meta http-equiv="expires" content="0" />
+	<meta name="author" content="<!--[sitename]-->" />
+	<meta name="copyright" content="Copyright (c) 2004 by <!--[sitename]-->" />
+	<meta name="revisit-after" content="1 days" />
+	<meta name="distribution" content="Global" />
+	<meta name="generator" content="PostNuke <!--[pnml name="_PN_VERSION_NUM"]--> - http://postnuke.com" />
+	<meta name="rating" content="General" />
+	<meta name="KEYWORDS" content="<!--[keywords]-->" />
+	<title><!--[title]--></title>
+	<link rel="shortcut icon" href="<!--[$imagepath]-->/favicon.ico" type="image/vnd.microsoft.icon" />
+	<link rel="icon" href="<!--[$imagepath]-->/favicon.ico" type="image/vnd.microsoft.icon" />
+	<!--[modulestylesheet xhtml=true]-->
+	<!--[modulestylesheet stylesheet=admin.css modname=admin xhtml=true]-->
+	<!--[additional_header]-->
+	<link rel="StyleSheet" href="<!--[$themepath]-->/style/style.css" type="text/css" />
+</head>
+<body bgcolor="<!--[$color3]-->" text="<!--[$text1]-->" onload="preloadImages();">
+<script type="text/javascript"><!--
+function newImage(arg) {
+	if (document.images) {
+		rslt = new Image();
+		rslt.src = arg;
+		return rslt;
+	}
+}
+
+function changeImages() {
+	if (document.images && (preloadFlag == true)) {
+		for (var i=0; i<changeImages.arguments.length; i+=2) {
+			document[changeImages.arguments[i]].src = changeImages.arguments[i+1];
+		}
+	}
+}
+
+var preloadFlag = false;
+function preloadImages() {
+	if (document.images) {
+		nav_home_over = newImage("<!--[$imagepath]-->/nav_home_over.gif");
+		nav_league_over = newImage("<!--[$imagepath]-->/nav_myleague_over.gif");
+		nav_forum_over = newImage("<!--[$imagepath]-->/nav_forum_over.gif");
+		nav_rankings_over = newImage("<!--[$imagepath]-->/nav_rankings_over.gif");
+		nav_store_over = newImage("<!--[$imagepath]-->/nav_store_over.gif");
+		nav_tourneys_over = newImage("<!--[$imagepath]-->/nav_tourneys_over.gif");
+		nav_faq_over = newImage("<!--[$imagepath]-->/nav_faq_over.gif");
+		preloadFlag = true;
+	}
+}
+// -->
+</script>
+<table bgcolor="<!--[$color3]-->" width="<!--[$pagewidth]-->" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td width="222">
+			<table width="222" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="2"><img src="<!--[$imagepath]-->/header_logo.jpg" width="222" height="136" alt="NAF Logo" border="0" /></td>
+				</tr>
+				<tr>
+					<td><img src="<!--[$imagepath]-->/header_leftstar.gif" alt="leftstar" width="32" height="18" border="0" /></td>
+					<td width="190" background="<!--[$imagepath]-->/header_leftarea.gif"><!--[datetime]--></td>
+				</tr>
+				<tr>
+					<td colspan="2"><img src="<!--[$imagepath]-->/header_capleft.gif" alt="capleft" width="222" height="10" border="0" /></td>
+				</tr>
+			</table>
+		</td>
+		<td width="*" background="<!--[$imagepath]-->/header_background.gif">
+			<table width="<!--[$pagewidth]-->" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td><img src="<!--[$imagepath]-->/spacer.gif" alt="spacer" width="181" height="10" border="0" /></td>
+				</tr>
+			</table></td>
+		<td width="437" background="<!--[$imagepath]-->/header_background.gif">
+			<table width="437" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="2" align="right"><img src="<!--[$imagepath]-->/header_naftype.gif" width="375" height="83" alt="NAF World Headquarters" border="0" /></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<table border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td><a href="index.php" onmouseover="changeImages('nav_home', '<!--[$imagepath]-->/nav_home_over.gif'); return true;" onmouseout="changeImages('nav_home', '<!--[$imagepath]-->/nav_home.gif'); return true;"><img name="nav_home" src="<!--[$imagepath]-->/nav_home.gif" alt="home" width="62" height="53" border="0" /></a></td>
+								<td><a href="index.php?module=PNphpBB2" onmouseover="changeImages('nav_forum', '<!--[$imagepath]-->/nav_forum_over.gif'); return true;" onmouseout="changeImages('nav_forum', '<!--[$imagepath]-->/nav_forum.gif'); return true;"><img name="nav_forum" src="<!--[$imagepath]-->/nav_forum.gif" alt="forum" width="62" height="53" border="0" /></a></td>
+								<td><a href="index.php?module=NAF&amp;type=rankings" onmouseover="changeImages('nav_rankings', '<!--[$imagepath]-->/nav_rankings_over.gif'); return true;" onmouseout="changeImages('nav_rankings', '<!--[$imagepath]-->/nav_rankings.gif'); return true;"><img name="nav_rankings" src="<!--[$imagepath]-->/nav_rankings.gif" alt="rankings" width="62" height="53" border="0" /></a></td>
+								<td><a href="index.php?module=NAF&amp;type=tournaments" onmouseover="changeImages('nav_tourneys', '<!--[$imagepath]-->/nav_tourneys_over.gif'); return true;" onmouseout="changeImages('nav_tourneys','<!--[$imagepath]-->/nav_tourneys.gif'); return true;"><img name="nav_tourneys" src="<!--[$imagepath]-->/nav_tourneys.gif" alt="tourneys" width="62" height="53" border="0" /></a></td>
+								<td><a href="index.php?module=Stars&amp;type=league" onmouseover="changeImages('nav_league', '<!--[$imagepath]-->/nav_myleague_over.gif'); return true;" onmouseout="changeImages('nav_league','<!--[$imagepath]-->/nav_myleague.gif'); return true;"><img name="nav_league" src="<!--[$imagepath]-->/nav_myleague.gif" alt="nyleague" width="62" height="53" border="0" /></a></td>
+								<td><a href="http://www.cafepress.com/naf" target="new" onmouseover="changeImages('nav_store', '<!--[$imagepath]-->/nav_store_over.gif'); return true;" onmouseout="changeImages('nav_store', '<!--[$imagepath]-->/nav_store.gif'); return true;"><img name="nav_store" src="<!--[$imagepath]-->/nav_store.gif" alt="store" width="62" height="53" border="0" /></a></td>
+								<td><a href="index.php?module=FAQ" onmouseover="changeImages('nav_faq', '<!--[$imagepath]-->/nav_faq_over.gif'); return true;" onmouseout="changeImages('nav_faq', '<!--[$imagepath]-->/nav_faq.gif'); return true;"><img name="nav_faq" src="<!--[$imagepath]-->/nav_faq.gif" alt="faq" width="65" height="53" border="0" /></a></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td width="409" background="<!--[$imagepath]-->/header_leftarea.gif" align="right"><!--[quote]--></td>
+					<td><img src="<!--[$imagepath]-->/header_rightstar.gif" alt="rightstar" width="28" height="18" border="0" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><img src="<!--[$imagepath]-->/header_capright.gif" alt="capright" width="437" height="10" border="0" /></td>
+				</tr>
+			</table></td>
+	</tr>
+</table>
+
+<table width="<!--[$pagewidth]-->" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td bgcolor="<!--[$color5]-->"><img src="<!--[$imagepath]-->/pixel.gif" width="2" height="1" border="0" alt="" /></td>
+<td bgcolor="<!--[$color1]-->"><img src="<!--[$imagepath]-->/pixel.gif" width="10" height="1" border="0" alt="" /></td>
+<td bgcolor="<!--[$color1]-->" background="<!--[$imagepath]-->/blockleft_bg.gif" width="149" valign="top">
+<!--[$leftblocks]--></td>
+<td bgcolor="<!--[$color3]-->"><img src="<!--[$imagepath]-->/pixel.gif" width="5" height="1" border="0" alt="" /></td>
+<td width="<!--[$pagewidth]-->" border="0" cellspacing="1" cellpadding="0" bgcolor="<!--[$color3]-->">
+<!--[$maincontent]--></td>
+<td bgcolor="<!--[$color3]-->"><img src="<!--[$imagepath]-->/pixel.gif" width="5" height="1" border="0" alt="" /></td>
+<td bgcolor="<!--[$color5]-->"><img src="<!--[$imagepath]-->/pixel.gif" width="2" height="1" border="0" alt="" /></td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="<!--[$pagewidth]-->">
+	<tr>
+		<td bgcolor="<!--[$color5]-->"><img src="<!--[$imagepath]-->/spacer.gif" width="2" height="67" border="0" alt="" /></td>
+		<td width="<!--[$pagewidth]-->">
+			<table border="0" cellpadding="0" cellspacing="0" width="<!--[$pagewidth]-->">
+				<tr>
+					<td width="<!--[$pagewidth]-->">
+						<table border="0" cellpadding="0" cellspacing="0" width="<!--[$pagewidth]-->">
+							<tr>
+								<td valign="bottom" background="<!--[$imagepath]-->/footer_background.gif">
+									<table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+										<tr>
+											<td>
+												<div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">&copy; 2006 NAF</font></div></td>
+										</tr>
+									</table></td>
+								<td width="<!--[$pagewidth]-->" valign="top">
+									<table border="0" cellpadding="0" cellspacing="0" width="<!--[$pagewidth]-->">
+										<tr>
+											<td width="<!--[$pagewidth]-->" background="<!--[$imagepath]-->/footer_pattern.gif"><img src="<!--[$imagepath]-->/footer_patterncap.gif" width="50" height="34" border="0" alt="" /></td>
+										</tr>
+										<tr>
+											<td><div class="whitetext" align="center"><!--[footmsg]--></div></td>
+										</tr>
+									</table></td>
+								<td bgcolor="<!--[$color5]-->"><img src="<!--[$imagepath]-->/spacer.gif" width="2" height="64" border="0" alt="" /></td>
+							</tr>
+							<tr bgcolor="<!--[$color5]-->">
+								<td height="1"><img src="<!--[$imagepath]-->/spacer.gif" alt="" width="159" height="1" /></td>
+								<td></td>
+								<td><img src="<!--[$imagepath]-->/spacer.gif" alt="" width="2" height="1" /></td>
+							</tr>
+						</table></td>
+				</tr>
+				<tr>
+					<td bgcolor="<!--[$color5]-->"><img src="<!--[$imagepath]-->/spacer.gif" width="777" height="3" border="0" alt="" /></td>
+				</tr>
+			</table></td>
+	</tr>
+</table>
+</body>
+</html>

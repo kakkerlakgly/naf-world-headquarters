@@ -1,0 +1,119 @@
+body {FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 11px; buttonface: #FF0000;}
+
+
+
+FONT {FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 11px;}
+
+
+
+TD {FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 11px;}
+
+
+
+P {FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 11px;}
+
+
+
+DIV {FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 11px;}
+
+
+
+INPUT {FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 11px;}
+
+
+
+TEXTAREA {FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 11px;}
+
+
+
+FORM {FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 11px;}
+
+
+
+SELECT {FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 11px;}
+
+
+
+A:link {FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #0000ff; FONT-SIZE: 11px; TEXT-DECORATION: underline; BACKGROUND: none;  font-variant : normal;  font-weight : bold;  }
+
+
+
+A:active {FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #8592AC; FONT-SIZE: 11px; TEXT-DECORATION: underline; BACKGROUND: none;  font-variant : normal; font-weight : bold; }
+
+
+
+A:visited {FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #222222; FONT-SIZE: 11px; TEXT-DECORATION: underline; BACKGROUND: none;  font-variant : normal; font-weight : bold; }
+
+
+
+A:hover {FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #222222; FONT-SIZE: 11px; TEXT-DECORATION: underline; BACKGROUND: none;  font-variant : normal; font-weight : bold; }
+
+
+
+.note {FONT-FAMILY: "Times New Roman", Times, serif; COLOR: #ff0000; FONT-SIZE: 11px; FONT-WEIGHT: bold; TEXT-DECORATION: none; BACKGROUND: none;}
+
+
+
+.title {FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; COLOR: #000000; FONT-SIZE: 11px; FONT-WEIGHT: bold; TEXT-DECORATION: none; BACKGROUND: none;}
+
+
+
+.storytitle {FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #9C0000; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-DECORATION: none; BACKGROUND: none;}
+
+
+
+.storytitle A:link {FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #8592AC; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-DECORATION: none; BACKGROUND: none;}
+
+
+
+.storytitle A:active {FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #8592AC; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-DECORATION: none; BACKGROUND: none;}
+
+
+
+.storytitle A:visited {FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #8592AC; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-DECORATION: none; BACKGROUND: none;}
+
+
+
+.storytitle A:hover {FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #A3AFC7; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-DECORATION: none; BACKGROUND: none;}
+
+
+
+.boxtitle {FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #333333; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-DECORATION: none; font-variant : normal; BACKGROUND: none;}
+
+
+
+.option {FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #6B8E23; FONT-SIZE: 11px; FONT-WEIGHT: bold; TEXT-DECORATION: none; BACKGROUND: none;}
+
+
+
+.storycat {FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #333333; FONT-SIZE: 11px; FONT-WEIGHT: bold; TEXT-DECORATION: underline; BACKGROUND: none;}
+
+
+
+.tiny {FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #333333; FONT-SIZE: 10px; FONT-WEIGHT: normal; TEXT-DECORATION: none; BACKGROUND: none;}
+
+
+
+.slogan {FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #8592AC; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-DECORATION: none; BACKGROUND: none;  font : small-caps; }
+
+
+
+.content {FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #333333; FONT-SIZE: 11px; BACKGROUND: none;}
+
+
+
+.boxcontent {FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #333333; FONT-SIZE: 11px; BACKGROUND: none;}
+
+
+
+.rightblock {FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #f8f7ee; FONT-SIZE: 11px; BACKGROUND: none;}
+
+.whitetext {FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #f8f7ee; FONT-SIZE: 11px; BACKGROUND: none;}
+
+.comment {FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #f8f7ee; FONT-SIZE: 11px; BACKGROUND: none;}
+
+table.memberslist-results {BACKGROUND: #f8f7ee;}
+
+
+
+
