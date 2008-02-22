@@ -2,7 +2,7 @@
 /** 
 *
 * @package attachment_mod
-* @version $Id: admin_extensions.php,v 1.4 2006/04/09 13:25:51 acydburn Exp $
+* @version $Id: admin_extensions.php 192 2007-01-20 15:17:44Z kronos $
 * @copyright (c) 2002 Meik Sievertsen
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License 
 *

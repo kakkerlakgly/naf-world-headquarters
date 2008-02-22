@@ -6,7 +6,7 @@
  *   copyright            : (C) 2001 The phpBB Group
  *   email                : support@phpbb.com
  *
- *   $Id: memberlist.php,v 1.2 2006/05/03 12:40:49 adrianc602 Exp $
+ *   $Id: memberlist.php 192 2007-01-20 15:17:44Z kronos $
  *
  ***************************************************************************/
 
@@ -52,6 +52,7 @@ if (!$userdata['session_logged_in'])
 // End PNphpBB2 Module
 
 $start = ( isset($HTTP_GET_VARS['start']) ) ? intval($HTTP_GET_VARS['start']) : 0;
+$start = ($start < 0) ? 0 : $start;
 
 if ( isset($HTTP_GET_VARS['mode']) || isset($HTTP_POST_VARS['mode']) )
 {
@@ -234,7 +235,7 @@ if ( $row = $db->sql_fetchrow($result) )
 //	  		$temp_url = append_sid("privmsg.$phpEx?mode=post&amp;" . POST_USERS_URL . "=$user_id");
 		if ($board_config['pnphpbb2_pn_pm'])
 		{
-		 	 $temp_url = ("modules.php?op=modload&name=Messages&file=replypmsg&send=1&uname=" . urlencode($username)); 
+		 	 $temp_url = "index.php?module=Messages&amp;func=compose&amp;uname=" . urlencode($username); 
 		}
 		else
 		{

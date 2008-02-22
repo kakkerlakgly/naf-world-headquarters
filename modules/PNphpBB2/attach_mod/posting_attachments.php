@@ -2,7 +2,7 @@
 /** 
 *
 * @package attachment_mod
-* @version $Id: posting_attachments.php,v 1.9 2006/04/22 16:21:09 acydburn Exp $
+* @version $Id: posting_attachments.php 192 2007-01-20 15:17:44Z kronos $
 * @copyright (c) 2002 Meik Sievertsen
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License 
 *
@@ -1050,7 +1050,10 @@ class attach_parent
 				}
 				else
 				{
-					$download_link = append_sid($phpbb_root_path . 'download.' . $phpEx . '?id=' . $this->attachment_id_list[$i]);
+// Begin PNphpBB2 Module
+//					$download_link = append_sid($phpbb_root_path . 'download.' . $phpEx . '?id=' . $this->attachment_id_list[$i]);
+					$download_link = append_sid('download.' . $phpEx . '?id=' . $this->attachment_id_list[$i]);
+// End PNphpBB2 Module
 				}
 
 				$template->assign_block_vars('attach_row', array(

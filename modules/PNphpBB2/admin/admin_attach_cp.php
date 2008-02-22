@@ -2,7 +2,7 @@
 /** 
 *
 * @package attachment_mod
-* @version $Id: admin_attach_cp.php,v 1.1 2005/11/07 18:55:05 acydburn Exp $
+* @version $Id: admin_attach_cp.php 192 2007-01-20 15:17:44Z kronos $
 * @copyright (c) 2002 Meik Sievertsen
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License 
 *
@@ -60,7 +60,7 @@ else
 {
 	$upload_dir = $attach_config['download_path'];
 }
-		echo $upload_dir;
+
 include($phpbb_root_path . 'attach_mod/includes/functions_selects.' . $phpEx);
 include($phpbb_root_path . 'attach_mod/includes/functions_admin.' . $phpEx);
 
@@ -848,7 +848,9 @@ if ($view == 'attachments')
 
 				'S_DELETE_BOX'	=> $delete_box,
 				'S_HIDDEN'		=> $hidden_field,
-				'U_VIEW_ATTACHMENT'	=> append_sid($phpbb_root_path . 'download.' . $phpEx . '?id=' . $attachments[$i]['attach_id']))
+// Begin PNphpBB2 Code
+				'U_VIEW_ATTACHMENT'	=> append_sid('download.' . $phpEx . '?id=' . $attachments[$i]['attach_id']))
+// End PNphpBB2 Code
 //				'U_VIEW_POST' => ($attachments[$i]['post_id'] != 0) ? append_sid("../viewtopic." . $phpEx . "?" . POST_POST_URL . "=" . $attachments[$i]['post_id'] . "#" . $attachments[$i]['post_id']) : '')
 			);
 			

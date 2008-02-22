@@ -6,7 +6,7 @@
  *   copyright            : (C) 2001 The phpBB Group
  *   email                : support@phpbb.com
  *
- *   $Id: usercp_viewprofile.php,v 1.2 2006/04/28 17:49:44 adrianc602 Exp $
+ *   $Id: usercp_viewprofile.php 192 2007-01-20 15:17:44Z kronos $
  *
  *
  ***************************************************************************/
@@ -150,7 +150,7 @@ else
 // $temp_url = append_sid("privmsg.$phpEx?mode=post&amp;" . POST_USERS_URL . "=" . $profiledata['user_id']);
 if ($board_config['pnphpbb2_pn_pm'])
 {
-	$temp_url = ("modules.php?op=modload&name=Messages&file=replypmsg&send=1&uname=" .urlencode($profiledata['username'])); 
+	$temp_url = "index.php?module=Messages&amp;func=compose&amp;uname=" . urlencode($profiledata['username']); 
 }
 else
 {

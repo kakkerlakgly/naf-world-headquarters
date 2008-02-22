@@ -6,7 +6,7 @@
  *   copyright            : (C) 2001 The phpBB Group
  *   email                : support@phpbb.com
  *
- *   $Id: admin_forums.php,v 1.2 2006/04/28 17:49:42 adrianc602 Exp $
+ *   $Id: admin_forums.php 192 2007-01-20 15:17:44Z kronos $
  *
  ***************************************************************************/
 
@@ -771,8 +771,8 @@ if( !empty($mode) )
 			//
 			// There is no problem having duplicate forum names so we won't check for it.
 			//
-			$sql = "INSERT INTO " . CATEGORIES_TABLE . " (cat_title, cat_order)
-				VALUES ('" . str_replace("\'", "''", $HTTP_POST_VARS['categoryname']) . "', $next_order)";
+			$sql = "INSERT INTO " . CATEGORIES_TABLE . " (cat_title, cat_order, cat_desc)
+				VALUES ('" . str_replace("\'", "''", $HTTP_POST_VARS['categoryname']) . "', $next_order, '')";
 			if( !$result = $db->sql_query($sql) )
 			{
 				message_die(GENERAL_ERROR, "Couldn't insert row in categories table", "", __LINE__, __FILE__, $sql);

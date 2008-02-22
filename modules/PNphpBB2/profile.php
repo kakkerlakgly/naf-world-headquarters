@@ -6,7 +6,7 @@
  *   copyright            : (C) 2001 The phpBB Group
  *   email                : support@phpbb.com
  *
- *   $Id: profile.php,v 1.2 2006/04/28 17:49:44 adrianc602 Exp $
+ *   $Id: profile.php 192 2007-01-20 15:17:44Z kronos $
  *
  *
  ***************************************************************************/

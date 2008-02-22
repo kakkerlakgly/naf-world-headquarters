@@ -6,7 +6,7 @@
  *   copyright            : (C) 2001 The phpBB Group
  *   email                : support@phpbb.com
  *
- *   $Id: viewtopic.php,v 1.3 2006/04/28 17:49:44 adrianc602 Exp $
+ *   $Id: viewtopic.php 191 2007-01-20 15:04:48Z kronos $
  *
  *
  ***************************************************************************/
@@ -57,6 +57,7 @@ if ( isset($HTTP_GET_VARS[POST_POST_URL]))
 
 
 $start = ( isset($HTTP_GET_VARS['start']) ) ? intval($HTTP_GET_VARS['start']) : 0;
+$start = ($start < 0) ? 0 : $start;
 
 // Begin PNphpBB2 Module (Support Status Mod)
 $ssu = ( isset($HTTP_GET_VARS['ssu']) ) ? intval($HTTP_GET_VARS['ssu']) : intval($HTTP_POST_VARS['ssu']);
@@ -1168,7 +1169,7 @@ for($i = 0; $i < $total_posts; $i++)
 //		$temp_url = append_sid("privmsg.$phpEx?mode=post&amp;" . POST_USERS_URL . "=$poster_id");
 		if ( $board_config['pnphpbb2_pn_pm'] )
 		{
-			$temp_url = ("modules.php?op=modload&name=Messages&file=replypmsg&send=1&uname=" . $poster); 
+			$temp_url = "index.php?module=Messages&amp;func=compose&amp;uname=" . $poster; 
 		}
 		else
 		{

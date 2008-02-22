@@ -7,7 +7,7 @@
  *     copyright            : (C) 2003-2004 the PNphpBB Group
  *     email                : support@pnphpbb.com
  *
- *     $Id: lang_pnphpbb2_admin.php,v 1.14 2004/10/15 20:56:40 carls Exp $
+ *     $Id: lang_pnphpbb2_admin.php 199 2007-02-11 16:00:03Z kronos $
  *
  ****************************************************************************/
 
@@ -31,6 +31,9 @@
 
 if ( defined('PNPHPBB_INSTALL') )
 {
+  if (!is_array($lang))
+    unset($lang);
+
   // Installation
   $lang['PNphpBB2_Install'] = "PNphpBB2 Installation";
   $lang['PNphpBB2_Installed'] = "PNphpBB2 Installed & Activated.";

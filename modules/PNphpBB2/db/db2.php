@@ -6,7 +6,7 @@
  *   copyright            : (C) 2001 The phpBB Group
  *   email                : support@phpbb.com
  *
- *   $Id: db2.php,v 1.2 2002/01/28 17:24:45 psotfx Exp $
+ *   $Id: db2.php 192 2007-01-20 15:17:44Z kronos $
  *
  ***************************************************************************/
 

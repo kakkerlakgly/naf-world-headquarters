@@ -6,7 +6,7 @@
 *     copyright            : (C) 2001 The phpBB Group
 *     email                : support@phpbb.com
 *
-*     $Id: admin_smilies.php,v 1.2 2006/04/28 17:49:43 adrianc602 Exp $
+*     $Id: admin_smilies.php 192 2007-01-20 15:17:44Z kronos $
 *
 ****************************************************************************/
 
