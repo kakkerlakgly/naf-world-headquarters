@@ -1,0 +1,24 @@
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+	<?php
+	if (!empty($block['title'])) {
+	?>
+	<tr>
+		<td align="left"><span class="boxtitle">
+		<?php
+		$img_name=explode(" ",$block[title]);
+		$img_nametwo=$img_name[0];
+		if(file_exists("themes/NAF/blocks/$img_nametwo.gif")) {
+		echo "<img src=\"themes/NAF/blocks/$img_nametwo.gif\" width=\"130\" height=\"20\">";
+		        } else {
+		echo "$block[title]\n";
+		}
+		?>
+</span></td>
+	</tr>
+</table>
+<table border="0" cellpadding="3" cellspacing="0" width="149">
+	<tr valign="top">
+		<td><?php        }
+        echo "$block[content]\n"; ?></td>
+	</tr>
+</table><br/>

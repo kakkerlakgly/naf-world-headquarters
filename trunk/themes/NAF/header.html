@@ -1,0 +1,95 @@
+<script language="JavaScript"><!--
+
+function newImage(arg) {
+	if (document.images) {
+		rslt = new Image();
+		rslt.src = arg;
+		return rslt;
+	}
+}
+
+function changeImages() {
+	if (document.images && (preloadFlag == true)) {
+		for (var i=0; i<changeImages.arguments.length; i+=2) {
+			document[changeImages.arguments[i]].src = changeImages.arguments[i+1];
+		}
+	}
+}
+
+var preloadFlag = false;
+function preloadImages() {
+	if (document.images) {
+		nav_home_over = newImage("themes/NAF/images/nav_home_over.gif");
+		nav_league_over = newImage("themes/NAF/images/nav_myleague_over.gif");
+		nav_forum_over = newImage("themes/NAF/images/nav_forum_over.gif");
+		nav_rankings_over = newImage("themes/NAF/images/nav_rankings_over.gif");
+		nav_store_over = newImage("themes/NAF/images/nav_store_over.gif");
+		nav_tourneys_over = newImage("themes/NAF/images/nav_tourneys_over.gif");
+		nav_faq_over = newImage("themes/NAF/images/nav_faq_over.gif");
+		preloadFlag = true;
+	}
+}
+// -->
+</script>
+</head>
+<body>
+<table bgcolor="#990000" width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td width="222">
+			<table width="222" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="2"><img src="themes/NAF/images/header_logo.jpg" width="222" height="136" alt="NAF Logo" border="0"></td>
+				</tr>
+				<tr>
+					<td><img src="themes/NAF/images/header_leftstar.gif" width="32" height="18" border="0"></td>
+					<td width="190" background="themes/NAF/images/header_leftarea.gif"><?php echo ml_ftime(_DATETIMEBRIEF, (GetUserTime(time()))); ?></td>
+				</tr>
+				<tr>
+					<td colspan="2"><img src="themes/NAF/images/header_capleft.gif" width="222" height="10" border="0"></td>
+				</tr>
+			</table>
+		</td>
+		<td width="*" background="themes/NAF/images/header_background.gif">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td><img src="themes/NAF/images/spacer.gif" width="181" height="10" border="0"></td>
+				</tr>
+			</table></td>
+		<td width="437" background="themes/NAF/images/header_background.gif">
+			<table width="437" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="2" align="right"><img src="themes/NAF/images/header_naftype.gif" width="375" height="83" alt="NAF World Headquarters" border="0"></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<table border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td><a href="index.php" onmouseover="changeImages('nav_home', 'themes/NAF/images/nav_home_over.gif'); return true;" onmouseout="changeImages('nav_home', 'themes/NAF/images/nav_home.gif'); return true;"><img name="nav_home" src="themes/NAF/images/nav_home.gif" width="62" height="53" border="0"></a></td>
+								<td><a href="<? echo pnGetBaseURL(); ?>modules.php?op=modload&name=PNphpBB2" onmouseover="changeImages('nav_forum', 'themes/NAF/images/nav_forum_over.gif'); return true;" onmouseout="changeImages('nav_forum', 'themes/NAF/images/nav_forum.gif'); return true;"><img name="nav_forum" src="themes/NAF/images/nav_forum.gif" width="62" height="53" border="0"></a></td>
+								<td><a href="naf.php?page=rankings" onmouseover="changeImages('nav_rankings', 'themes/NAF/images/nav_rankings_over.gif'); return true;" onmouseout="changeImages('nav_rankings', 'themes/NAF/images/nav_rankings.gif'); return true;"><img name="nav_rankings" src="themes/NAF/images/nav_rankings.gif" width="62" height="53" border="0"></a></td>
+								<td><a href="naf.php?page=tournaments" onmouseover="changeImages('nav_tourneys', 'themes/NAF/images/nav_tourneys_over.gif'); return true;" onmouseout="changeImages('nav_tourneys','themes/NAF/images/nav_tourneys.gif'); return true;"><img name="nav_tourneys" src="themes/NAF/images/nav_tourneys.gif" width="62" height="53" border="0"></a></td>
+								<td><a href="naf.php?page=league" onmouseover="changeImages('nav_league', 'themes/NAF/images/nav_myleague_over.gif'); return true;" onmouseout="changeImages('nav_league','themes/NAF/images/nav_myleague.gif'); return true;"><img name="nav_league" src="themes/NAF/images/nav_myleague.gif" width="62" height="53" border="0"></a></td>
+								<td><a href="http://www.cafepress.com/naf" target="new" onmouseover="changeImages('nav_store', 'themes/NAF/images/nav_store_over.gif'); return true;" onmouseout="changeImages('nav_store', 'themes/NAF/images/nav_store.gif'); return true;"><img name="nav_store" src="themes/NAF/images/nav_store.gif" width="62" height="53" border="0"></a></td>
+								<td><a href="modules.php?op=modload&name=FAQ" onmouseover="changeImages('nav_faq', 'themes/NAF/images/nav_faq_over.gif'); return true;" onmouseout="changeImages('nav_faq', 'themes/NAF/images/nav_faq.gif'); return true;"><img name="nav_faq" src="themes/NAF/images/nav_faq.gif" width="65" height="53" border="0"></a></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td width="409" background="themes/NAF/images/header_leftarea.gif" align="right">
+					<? 
+                                          list($dbconn) = pnDBGetConn();
+                                          $seed = microtime()*1000000;
+                                          $quote = $dbconn->Execute("SELECT quote FROM naf_quote ORDER BY rand($seed) LIMIT 1");
+                                          echo $quote->fields[0];
+					?></td>
+					<td><img src="themes/NAF/images/header_rightstar.gif" width="28" height="18" border="0"></td>
+				</tr>
+				<tr>
+					<td colspan="2"><img src="themes/NAF/images/header_capright.gif" width="437" height="10" border="0"></td>
+				</tr>
+			</table></td>
+	</tr>
+</table>
+</body>
+
