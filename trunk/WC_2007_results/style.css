@@ -1,0 +1,112 @@
+.* {
+    font-family: arial, helvetica, sans-serif;
+}
+
+body {
+    font-size: 10pt;
+    margin-left: 3%;
+    margin-right: 3%;
+    color: #704508;
+    background-color: #80F080;
+}
+
+img {
+    border: none;
+}
+
+.row1 {
+    background-color: #80F080;
+}
+
+.row2 {
+    background-color: #70E070;
+}
+
+.subtext {
+    font-size: 90%;
+    font-style: italic;
+}
+
+.help {
+    font-size: 80%;
+    font-style: italic;
+}
+
+.error {
+    color: #FF0000;
+    font-style: italic;
+    font-weight: 700;
+}
+
+A:link,A:visited,A:hover {
+    color: #704508;
+    TEXT-DECORATION: underline;
+}
+
+
+.basictable {
+    padding-left : 30px;
+    padding-right : 30px;
+    padding-top : 2px;
+    padding-bottom : 2px;
+    border-collapse: collapse;
+    border: 2px solid #A0A0A0;
+}
+
+
+.basictable.1 { background-color: #80F080; }
+.basictable.2 { background-color: #70E070; }
+.basictable.3 { color: #000000; background-color: #90FF90 }
+
+.basictable th
+{
+    font-weight: bold;
+    font-size: 95%;
+    text-align: center;
+    color: #f0d000;
+    border: 1px solid #A0A0A0;
+    background-color: #808080;
+}
+
+.basictable tr,
+{
+    font-weight: normal;
+    font-size: 90%;
+    padding:        4px;
+    border: 1px solid #A0A0A0;
+}
+
+.basictable td
+{
+    font-weight: normal;
+    font-size: 90%;
+    padding:        4px;
+    border: 1px solid #A0A0A0;
+}
+
+th.centered
+{
+    text-align:center;
+}
+
+div.heading
+{
+    font-weight: bold;
+    color: #704508;
+    text-align: center;
+    font-size: 110%;
+    padding-left : 15px;
+    padding-top : 1px;
+    padding-bottom : 10px;
+}
+
+div.subheading
+{
+    font-weight: bold;
+    color: #704508;
+    font-size: 110%;
+    padding-left : 15px;
+    padding-top : 8px;
+    padding-bottom : 8px;
+}
+
