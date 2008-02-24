@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<nafreport>
+   <organiser>NAF</organiser>
+   <coaches>
+      <coach>
+         <name>test1</name>
+         <number>11380</number>
+         <team>Orc</team>
+      </coach>
+      <coach>
+         <name>test2</name>
+         <number>11381</number>
+         <team>Amazons</team>
+      </coach>
+      <coach>
+         <name>test3</name>
+         <number>11382</number>
+         <team>Humans</team>
+      </coach>
+      <coach>
+         <name>test4</name>
+         <number>11383</number>
+         <team>Chaos</team>
+      </coach>
+      <!-- and so on -->
+   </coaches>
+   <game>
+      <timeStamp>[some kind of unspecified string]</timeStamp>
+      <playerRecord>
+         <name>Firstname Lastname</name>
+         <number>11380</number>
+         <teamRating>100</teamRating>
+         <touchDowns>1</touchDowns>
+         <badlyHurt>0</badlyHurt>
+         <seriouslyInjured>0</seriouslyInjured>
+         <dead>8</dead>
+         <winnings>40000</winnings>
+      </playerRecord>
+      <playerRecord>
+         <name>test4</name>
+         <number>11381</number>
+         <teamRating>100</teamRating>
+         <touchDowns>1</touchDowns>
+         <badlyHurt>0</badlyHurt>
+         <seriouslyInjured>0</seriouslyInjured>
+         <dead>8</dead>
+         <winnings>40000</winnings>
+      </playerRecord>
+      <gate>42</gate>
+   </game>
+   <game>
+      <timeStamp>[some kind of unspecified string]</timeStamp>
+      <playerRecord>
+         <name>Firstname Lastname</name>
+         <number>42</number>
+         <teamRating>100</teamRating>
+         <touchDowns>1</touchDowns>
+         <badlyHurt>0</badlyHurt>
+         <seriouslyInjured>0</seriouslyInjured>
+         <dead>8</dead>
+         <winnings>40000</winnings>
+      </playerRecord>
+      <playerRecord>
+         <name>test4</name>
+         <number>11381</number>
+         <teamRating>100</teamRating>
+         <touchDowns>1</touchDowns>
+         <badlyHurt>0</badlyHurt>
+         <seriouslyInjured>0</seriouslyInjured>
+         <dead>8</dead>
+         <winnings>40000</winnings>
+      </playerRecord>
+      <gate>42</gate>
+   </game>
+</nafreport>
