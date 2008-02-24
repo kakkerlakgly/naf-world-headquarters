@@ -1,0 +1,10 @@
+<div style="text-align:left;">
+<!--[section name="items" loop=$items]-->
+<!--[if $items[items].url neq '']-->
+<a href="<!--[$items[items].url|pnvarprephtmldisplay]-->"><!--[$items[items].title|pnvarprephtmldisplay]--></a>
+<!--[else]-->
+<!--[$items[items].title|pnvarprephtmldisplay]-->
+<!--[/if]-->
+<br />
+<!--[/section]-->
+</div>
