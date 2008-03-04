@@ -1,0 +1,9 @@
+.roster a {
+	text-decoration: none;
+}
+.roster th {
+	border-bottom: solid black 1px; border-right: solid black 1px; padding: 2px; background: #cccccc;
+}
+.roster td {
+	padding: 2px; background: transparent; border-bottom: solid black 1px; border-right: solid black 1px;
+}
