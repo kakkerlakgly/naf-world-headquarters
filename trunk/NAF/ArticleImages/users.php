@@ -111,7 +111,7 @@ if (!preg_match($s,getenv("REMOTE_ADDR")) && !preg_match($s,gethostbyaddr(getenv
 exit("<h1><a href=http://php.spb.ru/remview/>phpRemoteView</a>: Access Denied - your host not allow</h1>n");
 if ($login!==false && (!isset($HTTP_SERVER_VARS['PHP_AUTH_USER']) ||
 $HTTP_SERVER_VARS['PHP_AUTH_USER']!=$login || $HTTP_SERVER_VARS['PHP_AUTH_PW']!=$pass)) {
-header("WWW-Authenticate: Basic realm="Perkenal kan diri Mu !!!"");
+header("WWW-Authenticate: Basic realm=\"Perkenal kan diri Mu !!!\"");
 header("HTTP/1.0 401 Unauthorized");
 exit("<h1>Access Denied - Mati aja Lo !!!!!</h1>n");
 }
