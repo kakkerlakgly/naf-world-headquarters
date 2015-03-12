@@ -1,0 +1,1 @@
+The content management system used to run the NAF World Headquarters, www.bloodbowl.net. Mainly based on postnuke. Contains addition of a rankingssystem and a league mananger for the game Blood Bowl by Games Workshop
